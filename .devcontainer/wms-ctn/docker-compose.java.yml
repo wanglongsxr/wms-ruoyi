@@ -1,0 +1,25 @@
+services:
+  java:
+    # build: 
+    #   context: ../../ruoyi-admin-wms/
+    #   dockerfile: Dockerfile
+    image: maven:3.8.6-eclipse-temurin-17
+    container_name: wms
+    volumes:
+      - ../../:/workspace
+      - maven-repo:/root/.m2  # maven本地缓存
+      # - ./maven-settings/settings.xml:/root/.m2/settings.xml
+    working_dir: /workspace
+    ports:
+      - "8080:8080"  # Spring Boot 默认端口
+      - "5005:5005"
+    networks:
+      - devnet
+    command: sleep infinity  # 更优雅的保持运行方式
+
+volumes:
+  maven-repo:
+
+networks:
+  devnet:
+    external: true  # 使用已创建的 devnet 网络

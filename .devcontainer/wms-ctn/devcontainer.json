@@ -1,0 +1,15 @@
+{
+	"name": "wms",
+    "dockerComposeFile": "./docker-compose.java.yml",
+	"service": "java",
+	"workspaceFolder": "/workspace",
+	"extensions": [
+		// "vscjava.vscode-java-pack",
+		// "pivotal.vscode-spring-boot",
+		// "mysql.mysql"
+	],
+	"postCreateCommand": "chmod +x ../start.sh && chmod +x ../startd.sh && mvn clean install",
+	"shutdownAction": "none",
+	"remoteUser": "root"  // 避免权限问题
+  }
+  

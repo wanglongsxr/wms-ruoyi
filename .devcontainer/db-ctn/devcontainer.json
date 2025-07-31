@@ -1,0 +1,9 @@
+{
+	"name": "DB",
+    "dockerComposeFile": "./docker-compose.mysql.yml",
+	"service": "mysql",
+	"workspaceFolder": "/var/lib/mysql",
+	"shutdownAction": "none",
+	"remoteUser": "root"  // 避免权限问题
+  }
+  
